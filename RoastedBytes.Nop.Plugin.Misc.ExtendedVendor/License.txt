@@ -1,0 +1,111 @@
+*** END USER LICENSE AGREEMENT ***
+
+IMPORTANT: PLEASE READ THIS LICENSE CAREFULLY BEFORE DOWNLOADING ANY SOFTWARE, DOCUMENTATION OR OTHER MATERIALS MADE AVAILABLE FROM THIS WEBSITE. BY DOWNLOADING, USING THE SOFTWARE OR DOCUMENTATION CONTAINING THIS SOFTWARE, YOU AGREE THAT THIS END USER LICENSE AGREEMENT (EULA) IS A LEGALLY BINDING AND VALID CONTRACT AND AGREE TO BE BOUND BY IT. YOU AGREE TO ABIDE BY THE INTELLECTUAL PROPERTY LAWS AND ALL OF THE TERMS AND CONDITIONS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO THIS AGREEMENT, PLEASE DO NOT DOWNLOAD THE SOFTWARE.
+
+TERMS & DEFINITIONS
+Software – shall mean any plugin, extension, image, theme, module, template, script or any other product made available from this website.
+
+Owner / Licensor / Apexol / Roasted Bytes –  shall mean Apexol Technologies, the sole owner of this site and all the products, tools, scripts, images, or any other product made available on this website.
+
+End User / Licensee / Customer – shall mean you or the company you represent and are authorized to bind.
+
+Website – shall mean the domain and the website where the Software is installed and used. It does not include the subdomains or any the domain or website.
+
+1. LICENSE
+Subject to the terms of this Agreement, Apexol grants to you a limited, non-exclusive, non-transferable license, without right to sub-license, to install and use the Software downloaded and any accompanying documentation in accordance with this Agreement and any other written agreement with Apexol. Apexol does not transfer the title of any of the downloaded or purchased product to you; the license granted to you is not a sale. This agreement is a binding legal agreement between Roasted Bytes and the purchasers or users of the Software and tools provided on the website.
+
+1.1 TYPES OF LICENSES
+The terms and conditions set forth in sections 1.1.1 to 1.1.5 shall apply according to the licensed purchased by you / applicable to you. The terms applied in one section doesn’t apply to any other section.
+
+1.1.1 TRIAL / FREE LICENSE
+
+The Software licensed under TRIAL / FREE License grants to you a limited, non-exclusive, non-transferable license, without right to sub-license, to install and use the Software downloaded and any accompanying documentation by strictly adhering to the terms and conditions set forth in this document.
+
+1.1.2 REGULAR LICENSE
+
+The Software licensed under REGULAR License grants to you a limited, non-exclusive, non-transferable license, without right to sub-license, to install and use the Software downloaded and any accompanying documentation, on a Single Website Domain, by strictly adhering to the terms and conditions set forth in this document.
+
+1.1.3 LIMITED LICENSE
+
+The Software licensed under LIMITED License grants to you a limited, non-exclusive, non-transferable license, without right to sub-license, to install and use the Software downloaded and any accompanying documentation, up to Five Website Domains, by strictly adhering to the terms and conditions set forth in this document.
+
+1.1.4 UNLIMITED LICENSE
+
+The Software licensed under UNLIMITED License grants to you a limited, non-exclusive, non-transferable license, without right to sub-license, to install and use the Software downloaded and any accompanying documentation, on any number of Website Domains all of which shall be owned by you only, by strictly adhering to the terms and conditions set forth in this document.
+
+1.1.5 DEVELOPER UNLIMITED LICENSE
+
+The Software licensed under DEVELOPER UNLIMITED License grants to you a limited, non-exclusive, non-transferable license, without right to sub-license, to install and use the Software downloaded and any accompanying documentation without charging the clients, on any number of Website Domains all of which shall be owned by you or one or more of your clients, by strictly adhering to the terms and conditions set forth in this document.
+
+1.1.6 OPEN SOURCE LICENSE
+
+The Software licensed under OPEN SOURCE License grants to you the permission to redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version by strictly adhering to the terms and conditions set forth in this document. You can find the license at https://opensource.org/licenses/GPL-3.0
+
+1.2 SOFTWARE SUPPORT
+The Software license purchased by you under Regular, Limited, Unlimited and Developer Unlimited Licenses is entitled to a free Software support for 365 days from the date of purchase of license. Apexol shall respond to the query or support inquiry within 24 hours from the time of receipt of such inquiry. The response may not necessarily be the resolution to the inquiry, but Apexol will try to resolve the issue specified in the inquiry as soon as humanly and technically possible. The free Software support automatically ceases after completion of 365 days from the date of purchase of license. The licensee may have to purchase additional support license from Apexol for additional cost.
+
+The support inquiries shall always be online support channels. No telephonic support shall be provided. All support inquiries should only be related to the Software offered on this website. Support inquiries related to the softwares developed by other companies may go unanswered.
+
+1.3 SOFTWARE UPDATES
+The Software license purchased by you under Regular, Limited, Unlimited and Developer Unlimited Licenses is entitled to free Software updates for 365 days from the date of purchase of license. The updates are available for Software with same product title. Any update of the Software with different product title but with similar functionality to the Software purchased by you shall not be eligible for free update and shall be purchased separately.
+
+1.4 REFUNDS
+The Software sold on our website are non-tangible products. That means once your place any order with us, the order cannot be cancelled. We do not issue refunds once the order is placed with us. Therefore please make sure that you have read the specifications and information related to the product as described on the product page before you decide to purchase the license.
+
+2. USAGE RESTRICTIONS
+You shall use Software in compliance with all applicable laws and not for any unlawful purpose. Without limiting the foregoing, use, display or distribution of Software together with material that is pornographic, racist, vulgar, obscene, defamatory, libelous, abusive, promoting hatred, discriminating or displaying prejudice based on religion, ethnic heritage, race, sexual orientation or age is strictly prohibited.
+
+Each licensed copy of Software may be used on one single website by one user. Use of Software means that you have loaded, installed, or run Software on a computer or similar device. If you install Software onto a multi-user/multi-store/multi-domain platform, server or network, each and every individual user and website of Software must be licensed separately. The limitation shall be overridden for the type of license purchased by / applicable to you as per section 1.1 above.
+
+You may make one copy of Software for backup purposes, providing you only have one copy installed on one website. Other websites may not use the same copy of Software. The assignment, sublicense, networking, sale, or distribution of copies of Software are strictly forbidden without the prior written consent of Apexol. It is a violation of this agreement to assign, sell, share, loan, rent, lease, borrow, network or transfer the use of Software. If any person other than yourself uses Software registered in your name, regardless of whether it is at the same time or different times, then this agreement is being violated and you are responsible for that violation!
+
+3. DISTRIBUTION
+The Software downloaded from Apexol, modified or unmodified and the license herein granted shall not be copied, shared, distributed, re-sold, offered for re-sale, transferred or sub-licensed in whole or in part on a diskette, CD, Website or any other medium without prior written permission of Apexol.The Software downloaded under OPEN SOURCE LICENSE strictly follow the GNU license terms of distribution as specified in the clause 1.1.6 above.
+
+4. USER AGREEMENT
+4.1 Use
+Your license to use Software is limited to the type of license as per section 1.1 purchased by / applied to you. You shall not allow others to use, copy or evaluate copies of Software.
+
+4.2 Copyright Restriction
+The Software downloaded from this website contains copyrighted material, trade secrets and other proprietary material. You shall not, and shall not attempt to, modify, reverse engineer, disassemble or decompile Software. Nor can you create any derivative works or other works that are based upon or derived from Software in whole or in part.
+
+Roasted Bytes’s name, logo and graphics file that represents Software shall not be used in any way to promote products developed with Software. Roasted Bytes retains sole and exclusive ownership of all right, title and interest in and to Software and all Intellectual Property rights relating thereto.
+
+Copyright law and international copyright treaty provisions protect all parts of Software, products and services. No program, code, part, image, audio sample, or text may be copied or used in any way by you except as intended within the bounds of the type of license purchased by / applied to you. All rights not expressly granted hereunder are reserved for Apexol.
+
+4.3 Limitation of Responsibility & Limitation of Liability
+You will indemnify, hold harmless, and defend Apexol, its employees, agents and distributors against any and all claims, proceedings, demand and costs resulting from or in any way connected with your use of Apexol’s Software.
+
+In no event (including, without limitation, in the event of negligence) will Apexol , its employees, agents or distributors be liable for any consequential, incidental, indirect, special or punitive damages whatsoever (including, without limitation, damages for loss of profits, loss of use, business interruption, loss of information or data, or pecuniary loss), in connection with or arising out of or related to this Agreement, Software or the use or inability to use Software or the furnishing, performance or use of any other matters hereunder whether based upon contract, tort or any other theory including negligence.
+
+Apexol’s entire liability, without exception, is limited to the customers’ reimbursement of the purchase price of the Software (maximum being the lesser of the amount paid by you and the suggested retail price as listed by Apexol) minus the payment gateway charges incurred in exchange for destruction of all the copies of the software, cease the use of software and associated documentation, registration papers and manuals, and all materials that constitute a transfer of license from the customer back to Apexol.
+
+4.4 Warranties
+Except as expressly stated in writing, Apexol makes no representation or warranties in respect of this Software and expressly excludes all other warranties, expressed or implied, oral or written, including, without limitation, any implied warranties of merchantable quality or fitness for a particular purpose.
+
+4.5 Governing Law
+This Agreement shall be governed by the law of Indore, Madhya Pradesh, India applicable therein. You hereby irrevocably attorn and submit to the non-exclusive jurisdiction of the courts of Indore, Madhya Pradesh,India therefrom. If any provision shall be considered unlawful, void or otherwise unenforceable, then that provision shall be deemed severable from this License and not affect the validity and enforceability of any other provisions.
+
+4.6 Termination
+Any failure to comply with the terms and conditions of this Agreement will result in automatic and immediate termination of this license. Upon termination of this license granted herein for any reason, you agree to immediately cease use of Software and destroy all copies of Software supplied under this Agreement. The financial obligations incurred by you shall survive the expiration or termination of this license.
+
+5. LIMITED WARRANTY
+The limited warranty of the Software is applied to all but trial / free license & open source license specified in section 1.1 above.
+
+Apexol warrants solely that Software will perform substantially in accordance with accompanying documentation for a period of 90 days from the date of purchase of Software license. Apexol in not event warrants that the use of Software will be uninterrupted or error free at all times and in all circumstances and that the program errors will be corrected.
+
+The limited warranty does not apply:
+
+If the Software has been altered or modified by any person or entity except by Apexol
+If the Software has not been installed, operated, or maintained in accordance with instructions and accompanying documentation supplied by Apexol
+If the machine running the Software has any error or lacks the hardware or other software required for proper functioning of Software
+If the Software for it's operation and/or functionality requires some third party services or application programming interfaces (API) on which Apexol has no control whatsoever.
+Licensee’s sole and exclusive remedy and Apexol’s maximum responsibility under this warranty shall be repair or replacement of Software. If such remedy fails of its essential purpose, Licensee’s sole remedy and Apexol’s maximum liability, without exception, is limited to the customers’ reimbursement of the purchase price of the Software (maximum being the lesser of the amount paid by you and the suggested retail price as listed by Apexol)
+
+DISCLAIMER. EXCEPT AS SPECIFIED IN THIS SECTION 4 OF LIMITED WARRANTY, APEXOL DISCLAIMS ALL OTHER EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS, AND WARRANTIES INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTY OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT OR ARISING FROM A COURSE OF DEALING OR USAGE
+
+6. CONSENT OF USE OF DATA
+You agree that Apexol may collect and use information gathered in any manner as part of the product support services provided to you, if any, related to Software. Apexol may also use this information to provide notices to you which may be of use or interest to you.
+
+7. NO USE BY SOFTWARE VENDORS
+Vendors of WordPress based products, NopCommerce based products, Magento based products, jQuery based products (where a product can include themes, plugins, modules, extensions, scripts or any other software derived or based on) are not allowed to download or use the software unless for personal use without express written permission from Apexol. This does not apply to individuals or companies who are the service providers of WordPress, NopCommerce, Magento and jQuery.The Software downloaded under OPEN SOURCE LICENSE strictly follow the GNU license terms of usage and distribution as specified in the clause 1.1.6 above.
