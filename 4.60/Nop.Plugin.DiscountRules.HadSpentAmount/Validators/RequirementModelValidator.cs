@@ -1,0 +1,24 @@
+﻿using FluentValidation;
+using Nop.Plugin.DiscountRules.HadSpentAmount.Models;
+using Nop.Services.Localization;
+using Nop.Web.Framework.Validators;
+using System.Threading.Tasks;
+
+namespace Nop.Plugin.DiscountRules.HadSpentAmount.Validators
+{
+    /// <summary>
+    /// Represents an <see cref="RequirementModel"/> validator.
+    /// </summary>
+    public class RequirementModelValidator : BaseNopValidator<RequirementModel>
+    {
+        public RequirementModelValidator(ILocalizationService localizationService)
+        {
+            RuleFor(model => model.DiscountId)
+                .NotEmpty()
+                .WithMessageAwait(localizationService.GetResourceAsync("Plugins.DiscountRules.HadSpentAmount.Fields.DiscountId.Required"));
+            RuleFor(model => model.SpentAmount)
+                .GreaterThan(0)
+                .WithMessageAwait(localizationService.GetResourceAsync("Plugins.DiscountRules.HadSpentAmount.Fields.SpentAmount.Required"));
+        }
+    }
+}

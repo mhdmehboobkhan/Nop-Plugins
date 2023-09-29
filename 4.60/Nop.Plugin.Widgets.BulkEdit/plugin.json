@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "Bulk Edit",
+  "SystemName": "Widgets.BulkEdit",
+  "Version": "1.00",
+  "SupportedVersions": [ "4.60" ],
+  "Author": "Zulushack team",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.BulkEdit.dll",
+  "Description": "This plugin allows you to change the contents of main page slider"
+}

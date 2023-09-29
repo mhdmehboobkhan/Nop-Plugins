@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Discount requirements",
+  "FriendlyName": "Must be assigned to customer",
+  "SystemName": "DiscountRequirement.MustBeAssignedToCustomer",
+  "Version": "1.00",
+  "SupportedVersions": [ "4.60" ],
+  "Author": "Zulushack team",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.DiscountRules.CustomerVerify.dll",
+  "Description": "This plugin allows you to configure discounts for certain customer by his email"
+}

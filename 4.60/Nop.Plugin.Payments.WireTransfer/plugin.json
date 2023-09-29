@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Payment methods",
+  "FriendlyName": "Wire Transfer",
+  "SystemName": "Payments.WireTransfer",
+  "Version": "1.51",
+  "SupportedVersions": [ "4.60" ],
+  "Author": "nopCommerce team",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Payments.WireTransfer.dll",
+  "Description": "This plugin enables wire transfer payments"
+}

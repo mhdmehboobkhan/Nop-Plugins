@@ -1,0 +1,375 @@
+﻿@model Nop.Plugin.Widgets.BulkEdit.Models.BulkEditListModel
+
+@inject BulkEditSettings bulkEditSettings
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    NopHtml.AddScriptParts(ResourceLocation.Footer, "~/Plugins/Widgets.BulkEdit/Scripts/kendo.all.min.js", excludeFromBundle: true);
+
+    var defaultGridPageSize = adminAreaSettings.DefaultGridPageSize;
+    var gridPageSizes = adminAreaSettings.GridPageSizes;
+
+    //page title
+    ViewBag.Title = T("Plugins.Widgets.BulkEdit.List").Text;
+
+    //active menu item (system name)
+    NopHtml.SetActiveMenuItemSystemName("WidgetsBulkEditList");
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="content-header clearfix">
+        <h1 class="float-left">
+            @T("Plugins.Widgets.BulkEdit.List")
+        </h1>
+    </div>
+
+    <div class="content">
+        <div class="form-horizontal">
+            <div class="cards-group">
+                <div class="card card-default card-search">
+                    <div class="card-body">
+                        <div class="row search-row">
+                            <div class="search-text">@T("Admin.Common.Search")</div>
+                            <div class="icon-search"><i class="fa fa-search" aria-hidden="true"></i></div>
+                            <div class="icon-collapse"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+                        </div>
+
+                        <div class="search-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <div class="col-md-4">
+                                            <nop-label asp-for="SearchKeyWord" />
+                                        </div>
+                                        <div class="col-md-8">
+                                            <nop-editor asp-for="SearchKeyWord" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-4">
+                                            <nop-label asp-for="SearchProductTypeId" />
+                                        </div>
+                                        <div class="col-md-8">
+                                            <nop-select asp-for="SearchProductTypeId" asp-items="Model.AvailableProductTypes" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <div class="col-md-4">
+                                            <nop-label asp-for="SearchCategoryId" />
+                                        </div>
+                                        <div class="col-md-8">
+                                            <nop-select asp-for="SearchCategoryId" asp-items="Model.AvailableCategories" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-4">
+                                            <nop-label asp-for="SearchManufacturerId" />
+                                        </div>
+                                        <div class="col-md-8">
+                                            <nop-select asp-for="SearchManufacturerId" asp-items="Model.AvailableManufacturers" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="text-center col-12">
+                                    <button type="button" id="search-products" class="btn btn-primary btn-search"><i class="fa fa-search"></i>@T("Admin.Common.Search")</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card card-default">
+                    <div class="card-body">
+                        <div id="products-grid"></div>
+
+                        <script asp-location="Footer">
+                    $(document).ready(function () {
+                        $("#products-grid").kendoGrid({
+                            dataSource: {
+                                type: "json",
+                                transport: {
+                                    read: {
+                                        url: "@Html.Raw(Url.Action("BulkEditSelect", "WidgetsBulkEdit"))",
+                                        type: "POST",
+                                        dataType: "json",
+                                        data: additionalData
+                                    },
+                                    update: {
+                                        url: "@Html.Raw(Url.Action("BulkEditUpdate", "WidgetsBulkEdit"))",
+                                        type: "POST",
+                                        dataType: "json"
+                                    },
+                                    destroy: {
+                                        url: "@Html.Raw(Url.Action("BulkEditDelete", "WidgetsBulkEdit"))",
+                                        type: "POST",
+                                        dataType: "json"
+                                    },
+                                    parameterMap: function(data, operation) {
+                                        if (operation != "read") {
+                                            //post the entities so the ASP.NET DefaultModelBinder will understand them:
+                                            //products[0].Name="name"
+                                            //products[0].Id = 1
+                                            //products[1].Name="name"
+                                            //products[1].Id = 1
+
+                                            var result = {};
+
+                                            for (var i = 0; i < data.models.length; i++) {
+                                                var entity = data.models[i];
+
+                                                for (var member in entity) {
+                                                    result["products[" + i + "]." + member] = entity[member];
+                                                }
+                                            }
+
+                                            addAntiForgeryToken(result);
+                                            return result;
+                                        } else {
+                                            addAntiForgeryToken(data);
+                                            //return JSON.stringify(data);
+                                            return data;
+                                        }
+                                    }
+                                },
+                                schema: {
+                                    data: "Data",
+                                    total: "Total",
+                                    errors: "Errors",
+                                    model: {
+                                        id: "Id",
+                                        fields: {
+                                            ProductId: { editable: false, type: "number" },
+                                            Name: { editable: false, type: "string" },
+                                            Sku: { editable: true, type: "string" },
+                                            Price: { editable: true, type: "number" },
+                                            OldPrice: { editable: true, type: "number" },
+                                            Gtin: { editable: true, type: "string" },
+                                            ManufacturerPartNumber: { editable: true, type: "string" },
+                                            ManageInventoryMethod: { editable: false, type: "string" },
+                                            StockQuantity: { editable: true, type: "number" },
+                                            ShowOnHomepage: { editable: true, type: "boolean" },
+                                            DisableBuyButton: { editable: true, type: "boolean" },
+                                            DisableWishlistButton: { editable: true, type: "boolean" },
+                                            CallForPrice: { editable: true, type: "boolean" },
+                                            DisplayOrder: { editable: true, type: "number" },
+                                            Published: { editable: true, type: "boolean" },
+                                            Id: { editable: false, type: "number" }
+                                        }
+                                    }
+                                },
+                                requestEnd: function (e) {
+                                    if (e.type == "update") {
+                                        this.read();
+                                    }
+                                },
+                                error: function(e) {
+                                    display_kendoui_grid_error(e);
+                                    // Cancel the changes
+                                    this.cancelChanges();
+                                },
+                                //bulk editing
+                                batch: true,
+                                pageSize: @(defaultGridPageSize),
+                                serverPaging: true,
+                                serverFiltering: true,
+                                serverSorting: true
+                            },
+                            pageable: {
+                                refresh: true,
+                                pageSizes: [@(gridPageSizes)]
+                            },
+                            toolbar: ["save", "cancel"],
+                            editable: {
+                                confirmation: false,
+                                //bulk editing
+                                mode: "incell"
+                            },
+                            scrollable: false,
+                            columns: [ {
+                                    field: "Name",
+                                    title: "@T("Plugins.Widgets.BulkEdit.Fields.Name")",
+                                    width: 200
+                                },
+                                @if (bulkEditSettings.ShowSku)
+                                {
+                                    <text>{
+                                        field: "Sku",
+                                        title: "@T("Plugins.Widgets.BulkEdit.Fields.Sku")",
+                                        width: 150
+                                    },</text>
+                                }
+                                {
+                                    field: "Price",
+                                    title: "@T("Plugins.Widgets.BulkEdit.Fields.Price")",
+                                    width: 150,
+                                    editor: function (container, options) {
+                                        $('<input name="' + options.field + '"/>')
+                                            .appendTo(container)
+                                            .kendoNumericTextBox({
+                                                format: "{0:n4}",
+                                                decimals: 4
+                                            });
+                                    }
+                                },
+                                @if (bulkEditSettings.ShowOldPrice)
+                                {
+                                    <text>{
+                                        field: "OldPrice",
+                                        title: "@T("Plugins.Widgets.BulkEdit.Fields.OldPrice")",
+                                        width: 150,
+                                        editor: function (container, options) {
+                                            $('<input name="' + options.field + '"/>')
+                                                .appendTo(container)
+                                                .kendoNumericTextBox({
+                                                    format: "{0:n4}",
+                                                    decimals: 4
+                                                });
+                                        }
+                                    },</text>
+                                }
+                                @if (bulkEditSettings.ShowGtin)
+                                {
+                                    <text>{
+                                        field: "Gtin",
+                                        title: "@T("Plugins.Widgets.BulkEdit.Fields.Gtin")",
+                                        width: 150,
+                                        editor: function (container, options) {
+                                            $('<input name="' + options.field + '"/>')
+                                                .appendTo(container)
+                                                .text({
+                                                    //format: "{0:n4}",
+                                                   // decimals: 4
+                                                });
+                                        }
+                                    },</text>
+                                }
+                                @if (bulkEditSettings.ShowManufacturerPartNumber)
+                                {
+                                    <text>{
+                                        field: "ManufacturerPartNumber",
+                                        title: "@T("Plugins.Widgets.BulkEdit.Fields.ManufacturerPartNumber")",
+                                        width: 150,
+                                        editor: function (container, options) {
+                                            $('<input name="' + options.field + '"/>')
+                                                .appendTo(container)
+                                                .text({
+                                                    //format: "{0:n4}",
+                                                   // decimals: 4
+                                                });
+                                        }
+                                    },</text>
+                                }
+                                @if (bulkEditSettings.ShowManageInventoryMethod)
+                                {
+                                    <text>{
+                                        field: "ManageInventoryMethod",
+                                        title: "@T("Plugins.Widgets.BulkEdit.Fields.ManageInventoryMethod")",
+                                        width: 150
+                                    },</text>
+                                }
+                                {
+                                    field: "StockQuantity",
+                                    title: "@T("Plugins.Widgets.BulkEdit.Fields.StockQuantity")",
+                                    //integer format
+                                    format: "{0:0}",
+                                    width: 150
+                                },
+                                @if (bulkEditSettings.ShowOnHomepage)
+                                {
+                                    <text>{
+                                        field: "ShowOnHomepage",
+                                        title: "@T("Plugins.Widgets.BulkEdit.Fields.ShowOnHomepage")",
+                                        width: 150
+                                    },</text>
+                                }
+                                @if (bulkEditSettings.ShowDisableBuyButton)
+                                {
+                                    //a vendor does not have access to this functionality
+                                    <text>{
+                                        field: "DisableBuyButton",
+                                        title: "@T("Plugins.Widgets.BulkEdit.Fields.DisableBuyButton")",
+                                        width: 150
+                                    },</text>
+                                }
+                                @if (bulkEditSettings.ShowDisableWishlistButton)
+                                {
+                                    <text>{
+                                        field: "DisableWishlistButton",
+                                        title: "@T("Plugins.Widgets.BulkEdit.Fields.DisableWishlistButton")",
+                                        width: 150
+                                    },</text>
+                                }
+                                @if (bulkEditSettings.ShowCallForPrice)
+                                {
+                                    <text>{
+                                        field: "CallForPrice",
+                                        title: "@T("Plugins.Widgets.BulkEdit.Fields.CallForPrice")",
+                                        width: 150
+                                    },</text>
+                                }
+                                @if (bulkEditSettings.ShowDisplayOrder)
+                                {
+                                    <text>{
+                                        field: "DisplayOrder",
+                                        title: "@T("Plugins.Widgets.BulkEdit.Fields.DisplayOrder")",
+                                        width: 150
+                                    },</text>
+                                }
+                                {
+                                    field: "Published",
+                                    title: "@T("Plugins.Widgets.BulkEdit.Fields.Published")",
+                                    width: 150
+                                },
+                                {
+                                    field: "ProductId",
+                                    title: "@T("Admin.Common.View")",
+                                    width: 100,
+                                    template: '<a href="@Url.Content("~/Admin/Product/Edit/")#=Id#">@T("Admin.Common.View")</a>'
+                                },
+                                {
+                                    command: { name: "destroy", text: "@T("Admin.Common.Delete")" },
+                                    title: "@T("Admin.Common.Delete")",
+                                    width: 100
+                                }
+                            ]
+                        } );
+                    
+                        $('#search-products').click(function () {
+                            var grid = $('#products-grid').data('kendoGrid');
+                            grid.dataSource.page(1); //new search. Set page size to 1
+                            //grid.dataSource.read(); we already loaded the grid above using "page" function
+                            return false;
+                        });
+
+                        $("#@Html.IdFor(model => model.SearchKeyWord)").keydown(function (event) {
+                            if (event.keyCode == 13) {
+                                $("#search-products").click();
+                                return false;
+                            }
+                        });
+                    });
+
+                    function additionalData() {
+                        var data = {
+                            SearchKeyWord: $('#@Html.IdFor(model => model.SearchKeyWord)').val(),
+                            SearchCategoryId: $('#SearchCategoryId').val(),
+                            SearchManufacturerId: $('#SearchManufacturerId').val(),
+                            SearchProductTypeId: $('#SearchProductTypeId').val()
+                        };
+                        addAntiForgeryToken(data);
+                        return data;
+                    }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
